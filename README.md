@@ -1,1 +1,1 @@
-A simple rabitmq producer that uses lapin. produces a message every second.
+A simple RabbitMQ producer that uses lapin. produces a message every second.

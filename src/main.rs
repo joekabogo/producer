@@ -136,7 +136,6 @@ async fn send_messages(
     config: &Config,
 ) {
     for i in 1..=config.message_count {
-        tokio::time::sleep(Duration::from_secs(1)).await;
         let body = format!("#{}  count#{}", config.message_prefix, i);// produces a simple message #prefix count#
         let result = channel
             .basic_publish(
@@ -163,5 +162,6 @@ async fn send_messages(
                 process::exit(1);
             }
         }
+        tokio::time::sleep(Duration::from_secs(1)).await;
     }
 }
